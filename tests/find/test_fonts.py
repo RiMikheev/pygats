@@ -16,7 +16,7 @@ def time_decorator(func):
         seconds %= 3600
         minutes = seconds // 60
         seconds %= 60      
-        with open('result.txt', 'a') as file:
+        with open('tests/find/result.txt', 'a') as file:
             file.write('Время выполнения: %02d:%02d:%02d\n' % (hours, minutes, seconds))
     return wrapper
 
@@ -33,7 +33,7 @@ def find(img, txt):
 
 
 def print_percent(count_true, count_false):
-    with open('result.txt', 'a') as file:
+    with open('tests/find/result.txt', 'a') as file:
         file.write('Результаты выполнения:\n')
         count_all = count_true+count_false
         file.write(f'\tУспешно: {count_true}/{count_all}, %.2f' % ((count_true/count_all)*100) + '%\n')
@@ -45,7 +45,7 @@ ctx = p.Context(MD())
 
 @time_decorator
 def test_study_font_white():
-    with open('result.txt', 'a') as file:
+    with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Белый фон 350х50, черный текст 18 размера\n')
     global count_true
@@ -60,7 +60,7 @@ def test_study_font_white():
                   'TimesNewRoman', 'TimesNewRoman_Bold',
                   'TimesNewRoman_Italic', 'TimesNewRoman_Bold_Italic']
 
-    with open('words.txt') as test_file:
+    with open('tests/find/words.txt') as test_file:
         lines = test_file.readlines()
     for font in fonts_list:
         for line in lines:
@@ -72,7 +72,7 @@ def test_study_font_white():
 
 @time_decorator
 def test_study_font_gray():
-    with open('result.txt', 'a') as file:
+    with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Серый фон 350х50, черный текст 18 размера\n')
     global count_true
@@ -87,7 +87,7 @@ def test_study_font_gray():
                   'TimesNewRoman', 'TimesNewRoman_Bold',
                   'TimesNewRoman_Italic', 'TimesNewRoman_Bold_Italic']
 
-    with open('./words.txt') as test_file:
+    with open('tests/find/words.txt') as test_file:
         lines = test_file.readlines()
     for font in fonts_list:
         for line in lines:
@@ -99,7 +99,7 @@ def test_study_font_gray():
 
 @time_decorator
 def test_study_font_blue():
-    with open('result.txt', 'a') as file:
+    with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Синий фон 350х50, черный текст 18 размера\n')
     global count_true
@@ -114,7 +114,7 @@ def test_study_font_blue():
                   'TimesNewRoman', 'TimesNewRoman_Bold',
                   'TimesNewRoman_Italic', 'TimesNewRoman_Bold_Italic']
 
-    with open('words.txt') as test_file:
+    with open('tests/find/words.txt') as test_file:
         lines = test_file.readlines()
     for font in fonts_list:
         for line in lines:
@@ -126,7 +126,7 @@ def test_study_font_blue():
 
 @time_decorator
 def test_study_font_yellow():
-    with open('result.txt', 'a') as file:
+    with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Желтый фон 350х50, черный текст 18 размера\n')
     global count_true
@@ -141,7 +141,7 @@ def test_study_font_yellow():
                   'TimesNewRoman', 'TimesNewRoman_Bold',
                   'TimesNewRoman_Italic', 'TimesNewRoman_Bold_Italic']
 
-    with open('words.txt') as test_file:
+    with open('tests/find/words.txt') as test_file:
         lines = test_file.readlines()
     for font in fonts_list:
         for line in lines:
@@ -153,7 +153,7 @@ def test_study_font_yellow():
 
 @time_decorator
 def test_study_size():
-    with open('result.txt', 'a') as file:
+    with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от размера шрифта\n\
                    Белый фон 1920х1080, черный текст размера 8-112 с шагом 8\n')
     global count_true
@@ -168,7 +168,7 @@ def test_study_size():
                   'TimesNewRoman', 'TimesNewRoman_Bold',
                   'TimesNewRoman_Italic', 'TimesNewRoman_Bold_Italic']
 
-    with open('words.txt') as test_file:
+    with open('tests/find/words.txt') as test_file:
         lines = test_file.readlines()
     for font in fonts_list:
         diff = 65
