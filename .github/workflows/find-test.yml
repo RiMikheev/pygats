@@ -19,4 +19,4 @@ jobs:
         pip install pytesseract levenshtein pytest
     - name: Test find text
       run: |
-        python3 tests/find/test_fonts.py
+        python3 tests/test_fonts.py
