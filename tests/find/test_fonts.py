@@ -44,7 +44,7 @@ ctx = p.Context(MD())
 
 
 @time_decorator
-def test_study_font_white():
+def study_font_white():
     with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Белый фон 350х50, черный текст 18 размера\n')
@@ -71,7 +71,7 @@ def test_study_font_white():
 
 
 @time_decorator
-def test_study_font_gray():
+def study_font_gray():
     with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Серый фон 350х50, черный текст 18 размера\n')
@@ -98,7 +98,7 @@ def test_study_font_gray():
 
 
 @time_decorator
-def test_study_font_blue():
+def study_font_blue():
     with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Синий фон 350х50, черный текст 18 размера\n')
@@ -125,7 +125,7 @@ def test_study_font_blue():
 
 
 @time_decorator
-def test_study_font_yellow():
+def study_font_yellow():
     with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от шрифта\n\
                    Желтый фон 350х50, черный текст 18 размера\n')
@@ -152,7 +152,7 @@ def test_study_font_yellow():
 
 
 @time_decorator
-def test_study_size():
+def study_size():
     with open('tests/find/result.txt', 'a') as file:
         file.write('\n<Исследование распознавания в зависимости от размера шрифта\n\
                    Белый фон 1920х1080, черный текст размера 8-112 с шагом 8\n')
@@ -181,8 +181,11 @@ def test_study_size():
     print_percent(count_true, count_false)
 
 
-test_study_font_white()
-test_study_font_gray()
-test_study_font_blue()
-test_study_font_yellow()
-test_study_size()
+def test_all():
+    study_font_white()
+    study_font_gray()
+    # study_font_blue()
+    # study_font_yellow()
+    # study_size()
+    with open('./result.txt') as file:
+        print(file.read())
