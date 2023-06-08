@@ -187,5 +187,5 @@ def test_all():
     # study_font_blue()
     # study_font_yellow()
     # study_size()
-    with open('./result.txt') as file:
+    with open('tests/find/result.txt') as file:
         print(file.read())
