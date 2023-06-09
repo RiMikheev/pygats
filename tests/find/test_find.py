@@ -189,7 +189,7 @@ def study_size():
     print_percent(count_true, count_false)
 
 
-@pytest.mark.skipif(get_env != '1')
+@pytest.mark.skipif(get_env != '1', reason='Starting is done manually')
 def test_all():
     study_font_white()
     study_font_gray()
