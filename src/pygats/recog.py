@@ -280,7 +280,8 @@ def find_crop_image(img: Image, crop_area: Optional[str] = 'all',
 
 
 def find_text(img: Image, txt, skip=0, extend=False, one_word=False):
-    """Function finds text in image with Tesseract
+    """
+    Function finds text in image with Tesseract
 
     Args:
         img (Image): image where text will be recognized
